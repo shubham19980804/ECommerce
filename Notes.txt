@@ -133,5 +133,5 @@ Improvements requuired
 1. when user is already logged and when clicked on profile user details should show but not showing  directly showing log in again
 
 2. oriinal payent gateway is yet to be configured like gpay, phonePe, Credit card , debit card 
-
+3. Configure DB other currently working on H2
 
