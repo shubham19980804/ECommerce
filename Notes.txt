@@ -134,4 +134,4 @@ Improvements requuired
 
 2. oriinal payent gateway is yet to be configured like gpay, phonePe, Credit card , debit card 
 3. Configure DB other currently working on H2
-
+4.   you can work on integrating logging and exception (part-6 project backend) in existing complete which part-5 backend proj
