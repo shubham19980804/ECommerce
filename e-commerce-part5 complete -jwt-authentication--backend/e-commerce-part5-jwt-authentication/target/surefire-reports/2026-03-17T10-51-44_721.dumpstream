@@ -1,0 +1,5 @@
+# Created at 2026-03-17T10:51:45.444
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Project\Projects from githu repo to learn\gaurav560\ECommerce\e-commerce-part5-jwt-authentication\e-commerce-part5-jwt-authentication\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

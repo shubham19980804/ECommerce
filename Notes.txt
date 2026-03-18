@@ -1,0 +1,137 @@
+Backedn with exceptoion handling does not contrain user authentication and authrization
+Run only backedn part5 with auth jwt which is complete backedn and working project 
+------------------------------------------------------------------------Starting the applciation -----------------------------------------------------------
+---------------------------------------------------------------------------------------------
+
+>>BackEnd
+THIS project uses H2 (you can configure our own DB as well)
+>> Start back end project 
+use below URL to access h2 db
+http://localhost:8080/h2-console/login.jsp?jsessionid=e94ebc89186347ffff3528e20edaee37
+--take jdbc url from consol and put in jdbc url and click on connect.
+--execute insert aquery from data1.sql file from project.
+--commit the insert.  select * from product; -- check product 
+----------------------------------------------------------------------------------------------
+
+
+>>Front End
+--execute react from end by npm run dev command
+use below to access front end
+http://localhost:5173/
+-----------------------------------------------------------------------------------------------------
+
+--First register the use
+-- Log in with register username and password (then only you will see products)
+-- Do all other operations
+
+
+-----------------------------------------------------------------------------------------------------
+All working fine from front end and backedn e
+-----------------------------------------------------------API Testing------------------------------------------------------------------
+----------------------------User Controller testing 
+>>To add new user
+Use Post method
+http://localhost:8080/auth/addUser
+
+{
+  "userName": "Shubham",
+  "email": "shubha.bali@example.com",
+  "phoneNumber": "555-0123",
+  "address": "123 Maple Avenue, Springfield",
+  "password": "Shuhbam@123"
+}
+---------------------------------------------------------------------------------------------
+>>To get token 
+use post method
+http://localhost:8080/auth/login
+{
+  "userName": "Shubham",
+   "password": "Shuhbam@123"
+}   
+eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTaHViaGFtIiwiaWF0IjoxNzczODUyMTQ0LCJleHAiOjE3NzM4ODgxNDR9.E48XnM97xIx5a8GEc-jC0lnuZIAfLKWJxsa53m80vpk
+---------------------------------------------------------------------------------------------
+
+
+------------------------Product controller testing
+
+
+>>To access all product 
+http://localhost:8080/api/products
+-----------------------------------------------------------------------------------------------------
+>>To extract product By ID
+http://localhost:8080/api/product/1
+-----------------------------------------------------------------------------------------------------
+>>To add product
+http://localhost:8080/api/product
+ Set method to POST and enter your URL (e.g., http://localhost:8080/product).
+Go to the Body tab and select form-data.
+First Key:
+Key: product
+Value: {
+  "name": "Sony WH-1000XM5",
+  "description": "Wireless Noise Canceling Headphones",
+  "brand": "Sony",
+  "price": 349.99,
+  "category": "Electronics",
+  "releaseDate": "2024-05-15",
+  "productAvailable": true,
+  "stockQuantity": 50
+}
+Crucial Step: Click the vertical three dots (or hover) at the end of the key row to show the "Content-Type" column. Manually type application/json in that column.
+Second Key:
+Key: imageFile
+Change the Key type dropdown from "Text" to File.
+Value: Select an image from your computer.
+note :- On the far right of the table headers (where it says Key, Value, Description), click the three vertical dots (or the settings gear).
+Check the box that says Content-Type. A new column will appear in your grid.
+In that new column, for the product row, type: application/json.
+Keep the imageFile row as is (Postman usually handles the file type correctly, but you can set it to image/jpeg or image/png
+-----------------------------------------------------------------------------------------------------
+
+>> TO update the product
+Use the PUT method
+http://localhost:8080/api/product/16   --- 16 is product ID
+
+IMP:- other data use same as for create product just change the values
+{
+  "name": "LGTV WH-1000XM5",
+  "description": "Wireless Noise Canceling Headphones",
+  "brand": "Sony",
+  "price": 349.99,
+  "category": "Electronics",
+  "releaseDate": "2024-05-15",
+  "productAvailable": true,
+  "stockQuantity": 50
+}
+  "name": "Sony WH-1000XM5",
+  "description": "Wireless Noise Canceling Headphones",
+  "brand": "Sony",
+  "price": 349.99,
+  "category": "Electronics",
+  "releaseDate": "2024-05-15",
+  "productAvailable": true,
+  "stockQuantity": 50
+}
+
+also change the Photos
+------------------------------------------------------------------------------------------------------------
+>>To delete the product 
+--Use delete method
+http://localhost:8080/api/product/8  -- 8 is a product ID
+------------------------------------------------------------------------------------------------------------
+>>To search product by keyword
+http://localhost:8080/api/products/search?keyword=sony
+give param as keyword and any value
+
+------------------------------------------------------------------------------------------------------------------
+>> To checkout the product
+
+
+ 
+Improvements requuired
+
+1. when user is already logged and when clicked on profile user details should show but not showing  directly showing log in again
+
+2. oriinal payent gateway is yet to be configured like gpay, phonePe, Credit card , debit card 
+
+
